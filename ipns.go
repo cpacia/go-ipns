@@ -2,6 +2,7 @@ package ipns
 
 import (
 	"bytes"
+	"encoding/binary"
 	"fmt"
 	"time"
 
@@ -159,10 +160,13 @@ func Compare(a, b *pb.IpnsEntry) (int, error) {
 }
 
 func ipnsEntryDataForSig(e *pb.IpnsEntry) []byte {
+	seqno := make([]byte, 8)
+	binary.BigEndian.PutUint64(seqno, e.GetSequence())
 	return bytes.Join([][]byte{
 		e.Value,
 		e.Validity,
 		[]byte(fmt.Sprint(e.GetValidityType())),
+		seqno,
 	},
 		[]byte{})
 }
