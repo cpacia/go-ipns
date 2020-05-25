@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	pb "github.com/ipfs/go-ipns/pb"
+	pb "github.com/cpacia/go-ipns/pb"
 
 	proto "github.com/gogo/protobuf/proto"
 	u "github.com/ipfs/go-ipfs-util"

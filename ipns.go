@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	pb "github.com/ipfs/go-ipns/pb"
+	pb "github.com/cpacia/go-ipns/pb"
 
 	u "github.com/ipfs/go-ipfs-util"
 	ic "github.com/libp2p/go-libp2p-core/crypto"
